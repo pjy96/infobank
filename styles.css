@@ -1,0 +1,67 @@
+body{ /* 배경설정과 검색바 위치설정 */
+    font-family: 'Montserrat', sans-serif;
+    background-color: #e8e8e8;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+h2{ /* 설명란 글자 크기와 색깔 설정 */
+    font-size: 22px;
+    color: rgb(50, 50, 50);
+}
+input{ /* 검색바 */
+    padding: 10px 40px; /* input 내부 간격 */
+    font-size: 15px; 
+    border-radius: 25px; /* 테두리 반경 설정(동그랗게) */
+    border: 1px solid #bbb; /* 테두리 실선, 두께, 색깔 */
+    width: 350px; /* 너비 */
+}
+input:focus,
+input:hover{ /* 검색바에 마우스포인터가 올라왔을때, 클릭했을때 */
+    box-shadow: .5px .5px 5px 1px rgb(187, 187, 187); /* 그림자 설정 */
+    box-shadow: blur;
+    outline: none;
+}
+.button{ /* 키보드모양 아이콘 색깔과 위치 설정 */
+    position: absolute;
+    border: none;
+    color: rgb(154, 154, 154);
+    border-radius: 5px;
+    background-color: transparent;
+    left: 8px;
+    top: 75px;
+}
+.close{ /* x표시 아이콘 색깔과 위치 설정 */
+    position: absolute;
+    color: rgb(154, 154, 154);
+    background: transparent;
+    border: none;
+    right: 13px;
+    bottom: 11px;
+    cursor: pointer; /* 마우스 다가가면 모양 변화 */
+}
+.close:focus,
+.close:hover { /* x표시 아이콘에 마우스 올라갔을때, 클릭했을때 색깔 변화 */
+    color: rgb(52, 52, 52);
+}
+.result{ /* 결과 출력 창 위치와 폰트 설정 */
+    position: absolute;
+    color: black;
+    font-size: 20px;
+    top: 120px;
+    left: 25px;
+    font-weight: 600;
+}
+.rClose{ /* 쓰레기통 모양 아이콘 위치와 색깔 설정 */
+    position: absolute;
+    color: rgb(154, 154, 154);
+    background: transparent;
+    border: none;
+    left: 380px;
+    top: 120px;
+    cursor: pointer; /* 마우스 다가가면 모양 변화 */
+}
+.rClose:disabled{
+    display: none;
+}
