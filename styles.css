@@ -52,6 +52,9 @@ input:hover{ /* 검색바에 마우스포인터가 올라왔을때, 클릭했을
     top: 120px;
     left: 25px;
     font-weight: 600;
+    text-overflow: ellipsis; /* 벗어난 영역 ...처리 */
+    overflow: hidden; /* 출력창의 범위를 벗어나는 텍스트 줄넘김 */
+    width: 350px;
 }
 .rClose{ /* 쓰레기통 모양 아이콘 위치와 색깔 설정 */
     position: absolute;
