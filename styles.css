@@ -1,14 +1,19 @@
-body{ /* 배경설정과 검색바 위치설정 */
-    font-family: 'Montserrat', sans-serif;
+body{ /* 번체 배경색 설정 */
     background-color: #e8e8e8;
+}
+.IpEmail{ /* 검색바 위치와 폰트 설정 */
+    font-family: 'Gowun Dodum', sans-serif;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
 }
-h2{ /* 설명란 글자 크기와 색깔 설정 */
+h2{ /* 설명란 글자 크기와 색깔, 위치 설정 */
     font-size: 22px;
     color: rgb(50, 50, 50);
+    position: relative;
+    top: 10px;
+    left: 10px;
 }
 input{ /* 검색바 */
     padding: 10px 40px; /* input 내부 간격 */
@@ -24,16 +29,16 @@ input:hover{ /* 검색바에 마우스포인터가 올라왔을때, 클릭했을
     outline: none;
 }
 .button{ /* 키보드모양 아이콘 색깔과 위치 설정 */
-    position: absolute;
+    position: fixed;
     border: none;
     color: rgb(154, 154, 154);
     border-radius: 5px;
     background-color: transparent;
     left: 8px;
-    top: 75px;
+    top: 80px;
 }
 .close{ /* x표시 아이콘 색깔과 위치 설정 */
-    position: absolute;
+    position: fixed;
     color: rgb(154, 154, 154);
     background: transparent;
     border: none;
@@ -51,7 +56,7 @@ input:hover{ /* 검색바에 마우스포인터가 올라왔을때, 클릭했을
     font-size: 20px;
     top: 120px;
     left: 25px;
-    font-weight: 600;
+    font-weight: 500;
 }
 .rClose{ /* 쓰레기통 모양 아이콘 위치와 색깔 설정 */
     position: absolute;
@@ -59,9 +64,23 @@ input:hover{ /* 검색바에 마우스포인터가 올라왔을때, 클릭했을
     background: transparent;
     border: none;
     left: 380px;
-    top: 120px;
+    top: 125px;
     cursor: pointer; /* 마우스 다가가면 모양 변화 */
 }
-.rClose:disabled{
-    display: none;
+.rClose:disabled{ /* 쓰레기통 모양 아이콘이 비활성화 됐을때 */
+    display: none; /* 사라지게 */
+}
+.serverTime{ /* servertime 설정 */
+    position: fixed; /* 좌상단에 고정 */
+    background-color: black;
+    border: 1px solid black;
+}
+.time{ /* 시간 출력창 */
+    font-family: 'Gowun Dodum', sans-serif; /* 폰트 설정 */
+    font-weight: bold;
+    font-size: small; 
+    background-color: black;
+    color: #e8e8e8; /* 굵고 작게 흰색 글씨, 배경은 검정 */
+    position: absolute;
+    width: 97%; /* 배경이 차지하는 범위 설정 */
 }

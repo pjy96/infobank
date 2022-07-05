@@ -5,20 +5,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css"> <!--css 호출-->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Open+Sans:wght@300&display=swap" rel="stylesheet"> <!--font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com"> <!--googlo font 호출-->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!--googlo font 호출-->
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Gowun+Dodum&family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet"> <!--googlo font 호출-->
   <script src="https://kit.fontawesome.com/efcb98e1c1.js" crossorigin="anonymous"></script> <!--아이콘 fontawesome kit-->
   <title>IpEmail Validation</title>
 </head>
 <body>
 
-  <h2>Enter your IP or Email : </h2>
-  <input id="inputbar" type="text" placeholder="Type in..." onkeyup="printResult()"> <!--검색바 : enter를 눌렀을때 function 실행-->
-  <button class="button"><i class="fas fa-keyboard"></i></button> <!--검색바 왼쪽의 키보드 아이콘-->
-  <button class="close" onclick="fClose()"><i class="fa-solid fa-xmark"></i></button> <!--검색바 오른쪽의 x 표시 : 검색중인 내용 삭제-->
-  <div id="result" class="result"></div> <!--결과 출력창-->
-  <button id="rClose" class="rClose" onclick="rClose()" disabled ><i class="fa-solid fa-trash-can"></i></button> 
-  <!--쓰레기통모양 아이콘(검색 전 비활성화) : 실행결과 삭제-->
-
+  <div id="time" class="time" onload="serverTime()"></div> <!-- servertime 출력(window load와 동시에) -->
+  
+  <div class="IpEmail">
+    <h2>Enter your IP or Email : </h2>
+    <input id="inputbar" type="text" placeholder="Type in..." onkeyup="printResult()"> <!--검색바 : enter를 눌렀을때 function 실행-->
+    <button class="button"><i class="fas fa-keyboard"></i></button> <!--검색바 왼쪽의 키보드 아이콘-->
+    <button class="close" onclick="fClose()"><i class="fa-solid fa-xmark"></i></button> <!--검색바 오른쪽의 x 표시 : 검색중인 내용 삭제-->
+    <div id="result" class="result"></div> <!--결과 출력창-->
+    <button id="rClose" class="rClose" onclick="rClose()" disabled ><i class="fa-solid fa-trash-can"></i></button> 
+    <!--쓰레기통모양 아이콘(검색 전 비활성화) : 실행결과 삭제-->
+  </div>
+ 
   <script src="./myScript.js"></script> <!--js 호출-->
 
 </body>
