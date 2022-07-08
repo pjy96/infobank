@@ -1,4 +1,4 @@
-body{ /* 번체 배경색 설정 */
+body{ /* 전체 배경색 설정 */
     background-color: #e8e8e8;
 }
 .IpEmail{ /* 검색바 위치와 폰트 설정 */
@@ -11,8 +11,8 @@ body{ /* 번체 배경색 설정 */
 h2{ /* 설명란 글자 크기와 색깔, 위치 설정 */
     font-size: 22px;
     color: rgb(50, 50, 50);
-    position: relative;
-    top: 10px;
+    position: absolute;
+    top: -60px;
     left: 10px;
 }
 input{ /* 검색바 */
@@ -29,46 +29,51 @@ input:hover{ /* 검색바에 마우스포인터가 올라왔을때, 클릭했을
     outline: none;
 }
 .button{ /* 키보드모양 아이콘 색깔과 위치 설정 */
-    position: fixed;
+    position: absolute;
     border: none;
     color: rgb(154, 154, 154);
     border-radius: 5px;
     background-color: transparent;
     left: 8px;
-    top: 80px;
+    top: 10px;
 }
 .close{ /* x표시 아이콘 색깔과 위치 설정 */
-    position: fixed;
+    position:  absolute;
     color: rgb(154, 154, 154);
     background: transparent;
     border: none;
     right: 13px;
-    bottom: 10px;
+    bottom: 25px;
     cursor: pointer; /* 마우스 다가가면 모양 변화 */
 }
 .close:focus,
 .close:hover { /* x표시 아이콘에 마우스 올라갔을때, 클릭했을때 색깔 변화 */
     color: rgb(52, 52, 52);
 }
+.ResultContainer{ /* 결과 출력창과 삭제버튼 Container */
+    position: relative;
+    margin: 15px;
+    top: 3px;
+}
 .result{ /* 결과 출력 창 위치와 폰트 설정 */
-    position: absolute;
+    position:  absolute;
     color: black;
     font-size: 14px;
-    top: 110px;
-    left: 30px;
     font-weight: 500;
     width: 340px;
     overflow: auto;
-    /* height: 30px; */
+    height: 30px;
+    display: inline-block; /* 삭제버튼과 같은 줄에 배치 */
 }
 .rClose{ /* 쓰레기통 모양 아이콘 위치와 색깔 설정 */
     position: absolute;
     color: rgb(154, 154, 154);
     background: transparent;
     border: none;
-    left: 380px;
-    top: 125px;
     cursor: pointer; /* 마우스 다가가면 모양 변화 */
+    display: inline-block; /* 출력창과 같은 줄에 배치 */
+    left: 380px;
+    
 }
 .rClose:disabled{ /* 쓰레기통 모양 아이콘이 비활성화 됐을때 */
     display: none; /* 사라지게 */
@@ -81,7 +86,7 @@ input:hover{ /* 검색바에 마우스포인터가 올라왔을때, 클릭했을
     color: #e8e8e8; /* 굵고 작게 흰색 글씨, 배경은 검정 */
     width: 97%; /* 배경이 차지하는 범위 설정 */
     padding: 2px;
-    position: fixed;
+    position:  absolute;
     margin: 0;
 }
 .time{ /* 시간 출력창 */
@@ -91,7 +96,7 @@ input:hover{ /* 검색바에 마우스포인터가 올라왔을때, 클릭했을
     background-color: transparent; 
     color: #e8e8e8; /* 굵고 작게 흰색 글씨, 배경은 검정 */
     padding: 2px;
-    position: fixed;
+    position:  absolute;
     left: 85px;
     margin: 0;
 }
