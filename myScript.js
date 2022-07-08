@@ -17,7 +17,6 @@ function rClose(){
     //delete arr[몇번째];
 
 }
-
 /* 좌상단 서버타임 출력하기 */
 setInterval(function serverTime(){ 
 
@@ -51,14 +50,9 @@ function printResult(inputbar){
     const regEmail = /^\w+@\w+\.[0-9a-zA-Z]+$/;
     /* Email 정규식 : \w(=[0-9a-zA-Z_]) 1회이상 @ \w 1회이상 "." 숫자&알파벳 */
 
-    // var arr = new Array(); // 배열 선언
-    // var arrinput = document.getElementById("inputbar").value; // input에 입력한 값 배열에 저장
-    // arr.push(arrinput); //배열에 역순으로 값을 추가
-
 
     if(window.event.keyCode == 13){ /* enter's ascii code number = 13 */
 
-        
         if(regIp.test(inputbar)){ /* regIp와 input 값 비교 */
             result.innerText = element.innerText + " | " + inputbar + " is Email";
         }else if(regEmail.test(inputbar)){ /* regEmail과 input 값 비교 */
@@ -66,24 +60,6 @@ function printResult(inputbar){
         }else{ /* 유효하지 않은 형식입니다 */
             result.innerText = element.innerText + " | " + inputbar + " is invalid format";
         }
-
         tc.disabled = false; /* 쓰레기통 모양 아이콘 활성화 */
-
     }
 }
-// function addList(){ // 배열에 추가하기
-
-//     // 1. 추가할 내용을 input창에서 읽어온다
-//     var addValue = document.getElementById('inputbar').value;
-//     // 2. 추가할 내용 ol element 생성
-//     var ol = document.createElement("ol");
-//     // 2-1. ol에 id 속성 추가
-//     ol.setAttribute('id', addValue);
-//     // 2-2. ol에 text node 추가
-//     var textNode = document.createTextNode(addValue);
-//     ol.appendChild(ol);
-    
-//     for(var n=0; n<arr.length; n++){
-//         arr.appendChild();
-//     }
-// }

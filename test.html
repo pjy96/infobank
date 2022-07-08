@@ -16,13 +16,13 @@
   <div id="time" class="time" onload="serverTime()"></div> <!-- servertime 출력(window load와 동시에) -->
   
   <div class="IpEmail">
-    
+
     <h2>Enter your IP or Email : </h2>
     <input id="inputbar" type="text" placeholder="Type in..." onkeyup="printResult()"> <!--검색바 : enter를 눌렀을때 function 실행-->
     <button class="button"><i class="fas fa-keyboard"></i></button> <!--검색바 왼쪽의 키보드 아이콘-->
     <button class="close" onclick="fClose()"><i class="fa-solid fa-xmark"></i></button> <!--검색바 오른쪽의 x 표시 : 검색중인 내용 삭제-->
 
-    <div class="ResultContainer" id="ResultContainer">
+    <div class="ResultContainer" id="ResultContainer"> <!--결과 출력창과 삭제버튼-->
       <span id="result" class="result"></span> <!--결과 출력창-->
       <button id="rClose" class="rClose" onclick="rClose()" disabled ><i class="fa-solid fa-trash-can"></i></button> 
       <!--쓰레기통모양 아이콘(검색 전 비활성화) : 실행결과 삭제-->
