@@ -78,17 +78,6 @@ input:hover{ /* 검색바에 마우스포인터가 올라왔을때, 클릭했을
 .rClose:disabled{ /* 쓰레기통 모양 아이콘이 비활성화 됐을때 */
     display: none; /* 사라지게 */
 }
-.Now{ /* 현재 시간 >> */
-    font-family: 'Gowun Dodum', sans-serif; /* 폰트 설정 */
-    font-weight: bold;
-    font-size: small; 
-    background-color: black;
-    color: #e8e8e8; /* 굵고 작게 흰색 글씨, 배경은 검정 */
-    width: 97%; /* 배경이 차지하는 범위 설정 */
-    padding: 2px;
-    position:  absolute;
-    margin: 0;
-}
 .time{ /* 시간 출력창 */
     font-family: 'Gowun Dodum', sans-serif; /* 폰트 설정 */
     font-weight: bold;
@@ -98,5 +87,16 @@ input:hover{ /* 검색바에 마우스포인터가 올라왔을때, 클릭했을
     padding: 2px;
     position:  absolute;
     left: 85px;
+    margin: 0;
+}
+.Now{ /* 현재 시간 >> */
+    font-family: 'Gowun Dodum', sans-serif; /* 폰트 설정 */
+    font-weight: bold;
+    font-size: small; 
+    background-color: black;
+    color: #e8e8e8; /* 굵고 작게 흰색 글씨, 배경은 검정 */
+    width: 97%; /* 배경이 차지하는 범위 설정 */
+    padding: 2px;
+    position:  absolute;
     margin: 0;
 }
