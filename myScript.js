@@ -67,7 +67,8 @@ function test(){
 
     // console.log(arr)
     // console.log(entire)
-
+    
+    // 클릭수++로 5개까지 제한하고 삭제할때 remove --
 
 }
 
