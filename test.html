@@ -9,11 +9,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!--googlo font 호출-->
   <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Gowun+Dodum&family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet"> <!--googlo font 호출-->
   <script src="https://kit.fontawesome.com/efcb98e1c1.js" crossorigin="anonymous"></script> <!--아이콘 fontawesome kit-->
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> <!--jQuery 호출-->
   <script src="./myScript.js"></script> <!--js 호출-->
   <title>IpEmail Validation</title>
 </head>
 <body>
+  <button class="test" id="test" onclick="test()">testbutton</button>
+
+
   <p class="Now">현재 시간 >> </p> <!--현재 시간:-->
   <p id="time" class="time"></p> <!-- servertime 출력 -->
   <div class="IpEmail">
@@ -21,10 +24,11 @@
     <input id="inputbar" type="text" placeholder="Type in..." onkeyup="printResult()"> <!--검색바 : enter를 눌렀을때 function 실행-->
     <button class="button"><i class="fas fa-keyboard"></i></button> <!--검색바 왼쪽의 키보드 아이콘-->
     <button class="close" onclick="fClose()"><i class="fa-solid fa-xmark"></i></button> <!--검색바 오른쪽의 x 표시 : 검색중인 내용 삭제-->
-    <div class="ResultContainer" id="ResultContainer"> <!--결과 출력창과 삭제버튼-->
-      <span id="result" class="result"></span> <!--결과 출력창-->
+
+    <div class="Container" id="Container"> <!--결과 출력창과 삭제버튼-->
+      <p id="result" class="result"></p> <!--결과 출력창-->
       <button id="rClose" class="rClose" onclick="rClose()" disabled><i class="fa-solid fa-trash-can"></i></button> 
-      <!--쓰레기통모양 아이콘(검색 전 비활성화) : 실행결과 삭제-->
+      <!-- 쓰레기통모양 아이콘(검색 전 비활성화) : 실행결과 삭제 -->
     </div>
   </div>
 </body>
