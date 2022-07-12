@@ -101,7 +101,7 @@ setInterval(function request_time() {
         //호출 성공했을때
         success: function(res){
             const time = document.getElementById("time"); //time 출력창
-            var getTime = res.datetime;
+            var getTime = res.datetime; //worldtimeapi 중 datetime 추출
             var setDay = getTime.substring(0,10); // 전체 문자열 중 날짜에 해당
             var setTime = getTime.substring(11,19); // 전체 문자열 중 시간에 해당
             time.innerText = setDay + " " + setTime; // 최종 time 출력
