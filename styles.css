@@ -75,7 +75,6 @@ input:hover{ /* 검색바에 마우스포인터가 올라왔을때, 클릭했을
     position:  absolute;
     margin: 0;
 }
-/*//////////////////////////////////////////////////////////////////////////////////////////////*/
 .Container{ /* 결과 출력창과 삭제버튼 Container */
     position: absolute;
     margin: 20px;
