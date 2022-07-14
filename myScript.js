@@ -39,20 +39,16 @@ function printResult(inputbar){
 var arr = []; // 배열 생성
 function test(){
 
-    // enter 입력시 배열에 저장하고 가장 최근에 저장된 배열을 가장 위에 출력
-    // foreach (각 요소 호출) -> var text += 시간 + " | " + inputbar + 검사결과 + "<br>";
-    // pop : 마지막 요소 제거
-    // unshift : (배열을 역순으로) 새 항목 추가
-
+    // <배열 출력>
     // 1. enter 입력시 배열에 저장 
     // 2. 배열의 길이는 5개로 제한 (5개를 초과하면 가장 오래된/마지막 데이터 삭제)
     // 3. 가장 최근 데이터부터 출력 (배열 전체)
     // + 가장 최근 데이터가 데이터의 가장 처음 인덱스에 위치해야함 
-    // 4. 배열의 길이가 0개 이상이면 
 
     var inputbar = document.getElementById("inputbar").value; // inputbar 값 가져오기
     var result = document.getElementById("result"); // 검색결과 출력창
-    
+    var tc = document.getElementById("rClose"); /* 쓰레기통 모양 아이콘 */
+
     arr.unshift(inputbar); // 배열에 저장(가장 최근 데이터가 위로 오게)
     //배열의 길이가 5개를 넘지 않게
     if(arr.length > 5){
@@ -61,9 +57,8 @@ function test(){
 
     // 화면에 출력
     arr.forEach(element => {
-        console.log(element);
-        result.innerText = element + "\n";
-        result.innerText = arr
+        // result.innerText = '';
+        result.innerText += element + "\n";
     })
 
 

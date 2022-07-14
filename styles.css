@@ -86,7 +86,7 @@ input:hover{ /* 검색바에 마우스포인터가 올라왔을때, 클릭했을
     font-size: 14px;
     font-weight: 500;
     width: 340px;
-    /* overflow: auto;
+    /* overflow: auto; 
     height: 30px; */
     display: inline-block; /* 삭제버튼과 같은 줄에 배치 */
 }
