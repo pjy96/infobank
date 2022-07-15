@@ -46,6 +46,10 @@ function printResult(inputbar){
 
     function prnitResult(){
         //해당 div 출력
+        arr.forEach(text => { // 배열의 요소 추출해서 출력
+            result.innerText = tst.innerHTML + "\n"; 
+            
+        })
         // result.innerText = ""; //출력창 초기화
     }
 
@@ -68,10 +72,7 @@ function printResult(inputbar){
         }
 
         //print array
-        arr.forEach(text => { // 배열의 요소 추출해서 출력
-            result.innerText = tst.innerHTML + "\n"; 
-            
-        })
+        prnitResult();
 
         tc.disabled = false; /* 쓰레기통 모양 아이콘 활성화 */
     }
@@ -84,7 +85,7 @@ function printResult(inputbar){
         })
     })
 }
-
+function 
 
 
 
