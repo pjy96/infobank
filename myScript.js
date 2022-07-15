@@ -5,7 +5,7 @@ function fClose(){
 }
 
 /* after enter, run reg, print result */
-var arr = []; // 배열 생성
+var arr = []; // 배열생성
 function printResult(inputbar){
 
     var inputbar = document.getElementById("inputbar").value; /* 입력 받은 내용*/
@@ -17,27 +17,6 @@ function printResult(inputbar){
     const regIp = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/; 
     /* Email 정규식 : \w(=[0-9a-zA-Z_]) 1회이상 @ \w 1회이상 "." 숫자&알파벳 */
     const regEmail = /^\w+@\w+\.[0-9a-zA-Z]+$/;
-
-    if(window.event.keyCode == 13){ /* enter's ascii code number = 13 */
-
-        if(regIp.test(inputbar)){ /* regIp와 input 값 비교 */
-
-            result.innerText = element.innerText + " | " + inputbar + " is IP";
-
-        }else if(regEmail.test(inputbar)){ /* regEmail과 input 값 비교 */
-
-            result.innerText = element.innerText + " | " + inputbar + " is Email";
-
-        }else{ /* 유효하지 않은 형식입니다 */
-
-            result.innerText = element.innerText + " | " + inputbar + " is invalid format";
-        }
-
-        tc.disabled = false; /* 쓰레기통 모양 아이콘 활성화 */
-    }
-}
-
-function test(){
     
     // <배열 출력>
     // 1. enter 입력시 배열에 저장 
@@ -45,27 +24,49 @@ function test(){
     // 3. 가장 최근 데이터부터 출력 (배열 전체)
     // + 가장 최근 데이터가 데이터의 가장 처음 인덱스에 위치해야함 
 
-    var inputbar = document.getElementById("inputbar").value; // inputbar 값 가져오기
-    var result = document.getElementById("result"); // 검색결과 출력창
-
     result.innerText = ""; //출력창 초기화
-    arr.unshift(inputbar); // 배열에 저장(가장 최근 데이터가 위로 오게)
+
     //배열의 길이가 5개를 넘지 않게
-    if(arr.length > 5){
+    if(arr.length >= 5){
         arr.pop(); // 가장 오래된 데이터 삭제
     }
-    // 화면에 출력
-    arr.forEach(element => {
-        result.innerText += element + "\n";
-    })
-    
+    function printIP(){ // IP 출력
+        tst = element.innerText + " | " + inputbar + " is IP";
+        arr.unshift(tst); // 배열에 저장(가장 최근 데이터가 위로 오게)
+        arr.forEach(text => {
+            result.innerText += text + "\n";
+        })
+    }
+    function printEmail(){ // Email 출력
+        tst = element.innerText + " | " + inputbar + " is Email";
+        arr.unshift(tst); // 배열에 저장(가장 최근 데이터가 위로 오게)
+        arr.forEach(text => {
+            result.innerText += text + "\n";
+        })
+    }
+    function printIV(){ // invaild format 출력
+        tst = element.innerText + " | " + inputbar + " is invalid format";
+        arr.unshift(tst); // 배열에 저장(가장 최근 데이터가 위로 오게)
+        arr.forEach(text => {
+            result.innerText += text + "\n";
+        })
+    }
+    if(window.event.keyCode == 13){ /* enter's ascii code number = 13 */
+        if(regIp.test(inputbar)){ /* regIp */
+            printIP();
+        }else if(regEmail.test(inputbar)){ /* regEmail */
+            printEmail();
+        }else{ /* invalid */
+            printIV();
+        }
+        tc.disabled = false; /* 쓰레기통 모양 아이콘 활성화 */
+    }
 }
 
 /* 쓰레기통 모양 아이콘 기능 : 출력 내용 삭제 */
 function rClose(){ 
     var delt = document.getElementById('result');
     var tc = document.getElementById("rClose"); /* 쓰레기통 모양 아이콘 */
- 
     delt.innerHTML = ""; /* 출력 내용 삭제 */
     tc.disabled = true; /* 아이콘 비활성화 */
 }
