@@ -1,7 +1,7 @@
 /* xmark function */
 function fClose(){
-    var del = document.getElementById('inputbar');
-    del.value = ""; /* 검색바 내용 삭제 */
+    var inputbar = document.getElementById('inputbar');
+    inputbar.value = ""; /* 검색바 내용 삭제 */
 }
 
 /* after enter, run reg, print result */
@@ -17,12 +17,16 @@ function printResult(inputbar){
     const regIp = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/; 
     /* Email 정규식 : \w(=[0-9a-zA-Z_]) 1회이상 @ \w 1회이상 "." 숫자&알파벳 */
     const regEmail = /^\w+@\w+\.[0-9a-zA-Z]+$/;
-    
-    // <배열 출력>
-    // 1. enter 입력시 배열에 저장 
-    // 2. 배열의 길이는 5개로 제한 (5개를 초과하면 가장 오래된/마지막 데이터 삭제)
-    // 3. 가장 최근 데이터부터 출력 (배열 전체)
-    // + 가장 최근 데이터가 데이터의 가장 처음 인덱스에 위치해야함 
+
+
+    const rClose = document.querySelectorAll(".rClose"); // 삭제버튼 선택
+    rClose.forEach(btn => {
+        btn.addEventListener("click", (event) => {
+            result.innerHTML = "";
+            tc.disabled = true; 
+        })
+    })
+
 
     result.innerText = ""; //출력창 초기화
 
@@ -33,21 +37,21 @@ function printResult(inputbar){
     function printIP(){ // IP 출력
         tst = element.innerText + " | " + inputbar + " is IP";
         arr.unshift(tst); // 배열에 저장(가장 최근 데이터가 위로 오게)
-        arr.forEach(text => {
-            result.innerText += text + "\n";
+        arr.forEach(text => { // 배열의 요소 추출해서 출력
+            result.innerText += text + "\n"; 
         })
     }
     function printEmail(){ // Email 출력
         tst = element.innerText + " | " + inputbar + " is Email";
         arr.unshift(tst); // 배열에 저장(가장 최근 데이터가 위로 오게)
-        arr.forEach(text => {
+        arr.forEach(text => { // 배열의 요소 추출해서 출력
             result.innerText += text + "\n";
         })
     }
     function printIV(){ // invaild format 출력
         tst = element.innerText + " | " + inputbar + " is invalid format";
         arr.unshift(tst); // 배열에 저장(가장 최근 데이터가 위로 오게)
-        arr.forEach(text => {
+        arr.forEach(text => { // 배열의 요소 추출해서 출력
             result.innerText += text + "\n";
         })
     }
@@ -64,29 +68,12 @@ function printResult(inputbar){
 }
 
 /* 쓰레기통 모양 아이콘 기능 : 출력 내용 삭제 */
-function rClose(){ 
-    var delt = document.getElementById('result');
-    var tc = document.getElementById("rClose"); /* 쓰레기통 모양 아이콘 */
-    delt.innerHTML = ""; /* 출력 내용 삭제 */
-    tc.disabled = true; /* 아이콘 비활성화 */
-}
-
-/* fetch로 좌상단 서버타임 출력하기 */
-// setInterval(function serverTime(){ 
-//     const config = {
-//         method: "get"
-//     }; /* GET request */
-//     fetch("http://worldtimeapi.org/api/timezone/Asia/Seoul", config) /* url 주소로 get 요청 보내기 */
-//         .then(response => response.json())    /* json 형식으로 응답받음 */
-//         .then(data => {
-//             const time = document.getElementById("time"); /* time 출력창 */
-//             var getTime = data.datetime;
-//             var setDay = getTime.substring(0,10); /* 전체 문자열 중 날짜에 해당 */
-//             var setTime = getTime.substring(11,19); /* 전체 문자열 중 시간에 해당 */
-//             time.innerText = setDay + " " + setTime; /* 최종 time 출력 */
-//     })
-//     .catch(error => console.log(error)); /* error 발생시 */
-// },1000);
+// function rClose(){ 
+//     var delt = document.getElementById('result');
+//     var tc = document.getElementById("rClose"); /* 쓰레기통 모양 아이콘 */
+//     delt.innerHTML = ""; /* 출력 내용 삭제 */
+//     tc.disabled = true; /* 아이콘 비활성화 */
+// }
 
 // ajax로 서버시간 호출하기
 setInterval(function request_time() {
@@ -108,3 +95,20 @@ setInterval(function request_time() {
         } 
     })
 }, 1000); //1초마다 한번씩
+
+/* fetch로 좌상단 서버타임 출력하기 */
+// setInterval(function serverTime(){ 
+//     const config = {
+//         method: "get"
+//     }; /* GET request */
+//     fetch("http://worldtimeapi.org/api/timezone/Asia/Seoul", config) /* url 주소로 get 요청 보내기 */
+//         .then(response => response.json())    /* json 형식으로 응답받음 */
+//         .then(data => {
+//             const time = document.getElementById("time"); /* time 출력창 */
+//             var getTime = data.datetime;
+//             var setDay = getTime.substring(0,10); /* 전체 문자열 중 날짜에 해당 */
+//             var setTime = getTime.substring(11,19); /* 전체 문자열 중 시간에 해당 */
+//             time.innerText = setDay + " " + setTime; /* 최종 time 출력 */
+//     })
+//     .catch(error => console.log(error)); /* error 발생시 */
+// },1000);
