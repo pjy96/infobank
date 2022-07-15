@@ -19,6 +19,62 @@ function printResult(inputbar){
     const regEmail = /^\w+@\w+\.[0-9a-zA-Z]+$/;
 
 
+    function deleteRow(idx){
+        //slice
+        //prnitResult
+    }
+    /*
+    함수
+        //배열을 만드는 함수(타입 : 이메일, ip, FAIL)
+        //만약에 배열이 초과꽉찼어
+            하나빼주고
+            추가해줘
+    
+    */
+    function addRow(resultString){
+
+        result.innerText = ""; //출력창 초기화
+        tst = element.innerText + " | " + inputbar + resultString;
+        //배열의 길이가 5개를 넘지 않게
+        if(arr.length >= 5){
+            arr.pop(); // 가장 오래된 데이터 삭제
+            arr.unshift(tst);
+            console.log(arr)
+        }
+        // arr 사이즈 확인
+    }
+
+    function prnitResult(){
+        //해당 div 출력
+        // result.innerText = ""; //출력창 초기화
+    }
+    // function printIP(){ // IP 출력
+    //     tst = element.innerText + " | " + inputbar + " is IP";
+    //     arr.unshift(tst); // 배열에 저장(가장 최근 데이터가 위로 오게)
+    //     arr.forEach(text => { // 배열의 요소 추출해서 출력
+    //         result.innerText += text + "\n"; 
+    //     })
+    // }
+
+    if(window.event.keyCode == 13){ /* enter's ascii code number = 13 */
+
+        if(regIp.test(inputbar)){ /* regIp */
+            addRow(" is ip");
+        }else if(regEmail.test(inputbar)){ /* regEmail */
+            addRow(" is Email");
+        }else{ /* invalid */
+            addRow(" is Invalid format");
+        }
+
+        //print array
+        arr.forEach(text => { // 배열의 요소 추출해서 출력
+            result.innerText += text + "\n"; 
+
+        })
+
+        tc.disabled = false; /* 쓰레기통 모양 아이콘 활성화 */
+    }
+
     const rClose = document.querySelectorAll(".rClose"); // 삭제버튼 선택
     rClose.forEach(btn => {
         btn.addEventListener("click", (event) => {
@@ -26,46 +82,17 @@ function printResult(inputbar){
             tc.disabled = true; 
         })
     })
-
-
-    result.innerText = ""; //출력창 초기화
-
-    //배열의 길이가 5개를 넘지 않게
-    if(arr.length >= 5){
-        arr.pop(); // 가장 오래된 데이터 삭제
-    }
-    function printIP(){ // IP 출력
-        tst = element.innerText + " | " + inputbar + " is IP";
-        arr.unshift(tst); // 배열에 저장(가장 최근 데이터가 위로 오게)
-        arr.forEach(text => { // 배열의 요소 추출해서 출력
-            result.innerText += text + "\n"; 
-        })
-    }
-    function printEmail(){ // Email 출력
-        tst = element.innerText + " | " + inputbar + " is Email";
-        arr.unshift(tst); // 배열에 저장(가장 최근 데이터가 위로 오게)
-        arr.forEach(text => { // 배열의 요소 추출해서 출력
-            result.innerText += text + "\n";
-        })
-    }
-    function printIV(){ // invaild format 출력
-        tst = element.innerText + " | " + inputbar + " is invalid format";
-        arr.unshift(tst); // 배열에 저장(가장 최근 데이터가 위로 오게)
-        arr.forEach(text => { // 배열의 요소 추출해서 출력
-            result.innerText += text + "\n";
-        })
-    }
-    if(window.event.keyCode == 13){ /* enter's ascii code number = 13 */
-        if(regIp.test(inputbar)){ /* regIp */
-            printIP();
-        }else if(regEmail.test(inputbar)){ /* regEmail */
-            printEmail();
-        }else{ /* invalid */
-            printIV();
-        }
-        tc.disabled = false; /* 쓰레기통 모양 아이콘 활성화 */
-    }
 }
+
+
+
+
+
+
+
+
+
+
 
 /* 쓰레기통 모양 아이콘 기능 : 출력 내용 삭제 */
 // function rClose(){ 
