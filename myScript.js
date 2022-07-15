@@ -34,7 +34,7 @@ function printResult(inputbar){
     function addRow(resultString){
 
         result.innerText = ""; //출력창 초기화
-        tst = element.innerText + " | " + inputbar + resultString;
+        tst = element.innerHTML + " | " + inputbar + resultString;
         //배열의 길이가 5개를 넘지 않게
         if(arr.length >= 5){
             arr.pop(); // 가장 오래된 데이터 삭제
@@ -48,6 +48,7 @@ function printResult(inputbar){
         //해당 div 출력
         // result.innerText = ""; //출력창 초기화
     }
+
     // function printIP(){ // IP 출력
     //     tst = element.innerText + " | " + inputbar + " is IP";
     //     arr.unshift(tst); // 배열에 저장(가장 최근 데이터가 위로 오게)
@@ -68,8 +69,8 @@ function printResult(inputbar){
 
         //print array
         arr.forEach(text => { // 배열의 요소 추출해서 출력
-            result.innerText += text + "\n"; 
-
+            result.innerText = tst.innerHTML + "\n"; 
+            
         })
 
         tc.disabled = false; /* 쓰레기통 모양 아이콘 활성화 */
@@ -83,7 +84,6 @@ function printResult(inputbar){
         })
     })
 }
-
 
 
 
