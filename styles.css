@@ -96,8 +96,8 @@ input:hover{ /* 검색바에 마우스포인터가 올라왔을때, 클릭했을
     background: transparent;
     border: none;
     cursor: pointer; /* 마우스 다가가면 모양 변화 */
-    display: inline-block; /* 출력창과 같은 줄에 배치 */
     left: 380px;
+    display: inline-block; /* 출력창과 같은 줄에 배치 */
     
 }
 .rClose:disabled{ /* 쓰레기통 모양 아이콘이 비활성화 됐을때 */

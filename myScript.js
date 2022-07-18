@@ -18,62 +18,26 @@ function printResult(inputbar){
     /* Email 정규식 : \w(=[0-9a-zA-Z_]) 1회이상 @ \w 1회이상 "." 숫자&알파벳 */
     const regEmail = /^\w+@\w+\.[0-9a-zA-Z]+$/;
 
-
-    function deleteRow(idx){
-        //slice
-        //prnitResult
-    }
-    /*
-    함수
-        //배열을 만드는 함수(타입 : 이메일, ip, FAIL)
-        //만약에 배열이 초과꽉찼어
-            하나빼주고
-            추가해줘
-    
-    */
-    function addRow(resultString){
-
-        result.innerText = ""; //출력창 초기화
-        tst = element.innerHTML + " | " + inputbar + resultString;
-        //배열의 길이가 5개를 넘지 않게
-        if(arr.length >= 5){
+    function printArray(resultString){ // IP 출력
+        result.innerText = ""; // 출력창 초기화
+        tst = element.innerText + " | " + inputbar + resultString; // 저장할 문자열
+        arr.unshift(tst); // 배열에 저장(가장 최근 데이터가 위로 오게)
+        for(var i=0; i<arr.length; i++){
+            result.innerHTML += arr[i] + "<br>";
+        } // 배열길이만큼 배열 출력
+        if(arr.length >= 5){ // 배열의 길이가 5를 넘지 않게
             arr.pop(); // 가장 오래된 데이터 삭제
-            arr.unshift(tst);
-            console.log(arr)
         }
-        // arr 사이즈 확인
     }
 
-    function prnitResult(){
-        //해당 div 출력
-        arr.forEach(text => { // 배열의 요소 추출해서 출력
-            result.innerText = tst.innerHTML + "\n"; 
-            
-        })
-        // result.innerText = ""; //출력창 초기화
-    }
-
-    // function printIP(){ // IP 출력
-    //     tst = element.innerText + " | " + inputbar + " is IP";
-    //     arr.unshift(tst); // 배열에 저장(가장 최근 데이터가 위로 오게)
-    //     arr.forEach(text => { // 배열의 요소 추출해서 출력
-    //         result.innerText += text + "\n"; 
-    //     })
-    // }
-
-    if(window.event.keyCode == 13){ /* enter's ascii code number = 13 */
-
+    if(window.event.keyCode == 13){ /* Enter 입력 시 */
         if(regIp.test(inputbar)){ /* regIp */
-            addRow(" is ip");
+            printArray(" is IP");
         }else if(regEmail.test(inputbar)){ /* regEmail */
-            addRow(" is Email");
+            printArray(" is Email");
         }else{ /* invalid */
-            addRow(" is Invalid format");
+            printArray(" is invalid format");
         }
-
-        //print array
-        prnitResult();
-
         tc.disabled = false; /* 쓰레기통 모양 아이콘 활성화 */
     }
 
@@ -83,25 +47,11 @@ function printResult(inputbar){
             result.innerHTML = "";
             tc.disabled = true; 
         })
+        //slice
     })
 }
-function 
 
 
-
-
-
-
-
-
-
-/* 쓰레기통 모양 아이콘 기능 : 출력 내용 삭제 */
-// function rClose(){ 
-//     var delt = document.getElementById('result');
-//     var tc = document.getElementById("rClose"); /* 쓰레기통 모양 아이콘 */
-//     delt.innerHTML = ""; /* 출력 내용 삭제 */
-//     tc.disabled = true; /* 아이콘 비활성화 */
-// }
 
 // ajax로 서버시간 호출하기
 setInterval(function request_time() {
