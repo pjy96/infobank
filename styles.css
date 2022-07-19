@@ -81,31 +81,15 @@ input:hover{ /* 검색바에 마우스포인터가 올라왔을때, 클릭했을
     color: black;
     font-size: 14px;
     font-weight: 500;
-    width: 370px;
-    /* overflow: auto; 
-    height: 30px; */
+    width: 410px;
     display: inline-block; /* 출력창과 같은 줄에 배치 */
-    /*text-align: left;*/
-}
-.rClose{ /* 삭제버튼 위치와 색깔 설정 */
-    position: absolute;
-    color: rgb(154, 154, 154);
-    background: transparent;
-    border: none;
-    cursor: pointer; /* 마우스 다가가면 모양 변화 */
-    left: 380px;
-    display: inline-block; /* 출력창과 같은 줄에 배치 */
-}
-.rClose:disabled{ /* 쓰레기통 모양 아이콘이 비활성화 됐을때 */
-    display: none; /* 사라지게 */
-}
-.Container{ 
-    position: absolute;
     margin: 10px;
+    padding: 5px;
 }
-/*.delButton{
-    display: table-cell;
-    text-align: center;
-    cursor: pointer;
-    color: red;
-}*/
+.del{ /* 출력창에 생성되는 삭제버튼 */
+    float: right;
+    border: none;
+    background: transparent;
+    color: rgb(154, 154, 154);
+    cursor: pointer; /* 마우스 다가가면 모양 변화 */
+}

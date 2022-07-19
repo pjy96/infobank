@@ -37,13 +37,13 @@ function printArray(resultString){
 
     result.innerHTML = ""; // 출력창 초기화
     tst = element.innerHTML + " | " + inputbar + resultString; // 저장할 문자열
-
     arr.unshift(tst); // 문자열을 배열에 저장(가장 최근 데이터가 위로 오게)
+    
     if(arr.length > 5){ // 배열의 길이가 5를 넘지 않게
         arr.pop(); // 가장 오래된 데이터 삭제
     }
-    for(var i=0; i<arr.length; i++){
-        result.innerHTML += arr[i] +"<button onclick=\"deleteArray("+i+")\">삭제</button><br>";
+    for(var i=0; i<arr.length; i++){ // 문자열 저장한 배열 + 삭제버튼 + 개행
+        result.innerHTML += arr[i] +"<button class=del onclick=\"deleteArray("+i+")\"><i class=\"fa-solid fa-trash-can\"></i></button><br>";
     }
 }
 
@@ -52,7 +52,7 @@ function deleteArray(idx){
     arr.splice(idx,1); // 배열의 idx번째 내용 삭제
     result.innerHTML = ""; // 출력창 초기화
     for(var i=0; i<arr.length; i++){ // 재출력
-        result.innerHTML += arr[i] +"<button onclick=\"deleteArray("+i+")\">삭제</button><br>";
+        result.innerHTML += arr[i] +"<button class=del onclick=\"deleteArray("+i+")\"><i class=\"fa-solid fa-trash-can\"></i></button><br>";
     }
 }
 
