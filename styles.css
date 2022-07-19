@@ -75,7 +75,6 @@ input:hover{ /* 검색바에 마우스포인터가 올라왔을때, 클릭했을
     position:  absolute;
     margin: 0;
 }
-
 .result{ /* 결과 출력 창 위치와 폰트 설정 */
     position:  absolute;
     color: black;
@@ -87,9 +86,16 @@ input:hover{ /* 검색바에 마우스포인터가 올라왔을때, 클릭했을
     padding: 5px;
 }
 .del{ /* 출력창에 생성되는 삭제버튼 */
-    float: right;
+    float: right; /* 오른쪽 정렬 */
     border: none;
     background: transparent;
     color: rgb(154, 154, 154);
     cursor: pointer; /* 마우스 다가가면 모양 변화 */
+}
+.del:hover,
+.del:focus{ /* 삭제버튼 마우스 가까이 갔을 때, 클릭했을 때 */
+    color: rgb(60, 60, 60);
+}
+.eTime{
+    color: red;
 }

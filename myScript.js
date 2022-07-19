@@ -28,14 +28,22 @@ function printResult(inputbar){
 
 /* 입력받은 값 배열에 저장 -> 양식에 맞게 출력 */
 function printArray(resultString){
-
     var inputbar = document.getElementById("inputbar").value; /* 입력 받은 내용*/
     var result = document.getElementById("result"); /* 검색결과 출력창*/
     var element = document.getElementById("time"); /* div time (현재시간) */
 
     result.innerHTML = ""; // 출력창 초기화
-    tst = element.innerHTML + " | " + inputbar + resultString; // 저장할 문자열
-    arr.unshift(tst); // 문자열을 배열에 저장(가장 최근 데이터가 위로 오게)
+
+    var eTime = document.getElementById("eTime");
+    eTime = element.innerHTML + " | " ; // 저장할 문자열 중 시간
+    
+    //t = element.innerHTML + " | " ; // 저장할 문자열 중 시간
+    s = inputbar + resultString; // 저장할 문자열 중 유효성검사 결과
+    // // t랑 s랑 css 따로 넣을 수 있는지 
+
+
+
+    arr.unshift(eTime+s); // 문자열을 배열에 저장(가장 최근 데이터가 위로 오게)
 
     if(arr.length > 5){ // 배열의 길이가 5를 넘지 않게
         arr.pop(); // 가장 오래된 데이터 삭제
