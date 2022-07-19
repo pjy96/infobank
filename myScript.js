@@ -9,7 +9,6 @@ function fClose(){
 /* Enter 입력 -> 유효성 검사 -> 결과 출력 */
 function printResult(inputbar){
     var inputbar = document.getElementById("inputbar").value; /* 입력 받은 내용*/
-    //var tc = document.getElementById("rClose"); /* 삭제 버튼 */
 
     /* IP 정규식 : 0~255사이의 숫자 + "." + 0~255사이의 숫자 + "." + 0~255사이의 숫자 + "." 0~255사이의 숫자 */
     const regIp = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/; 
@@ -24,7 +23,6 @@ function printResult(inputbar){
         }else{ /* invalid */
             printArray(" is invalid format");
         }
-        //tc.disabled = false; /* 쓰레기통 모양 아이콘 활성화 */
     }
 }
 
@@ -38,7 +36,7 @@ function printArray(resultString){
     result.innerHTML = ""; // 출력창 초기화
     tst = element.innerHTML + " | " + inputbar + resultString; // 저장할 문자열
     arr.unshift(tst); // 문자열을 배열에 저장(가장 최근 데이터가 위로 오게)
-    
+
     if(arr.length > 5){ // 배열의 길이가 5를 넘지 않게
         arr.pop(); // 가장 오래된 데이터 삭제
     }
