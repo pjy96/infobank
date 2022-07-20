@@ -1,4 +1,5 @@
-var arr = []; // 배열생성 
+var arrElement = []; // 시간 출력할 배열 생성 
+var arr = []; // 검사 결과 출력할 배열 생성
 
 /* xmark function */
 function fClose(){
@@ -6,7 +7,7 @@ function fClose(){
     inputbar.value = ""; /* 검색바 내용 삭제 */
 }
 
-/* Enter 입력 -> 유효성 검사 -> 결과 출력 */
+/* Enter 입력 -> 유효성 검사 */
 function printResult(inputbar){
     var inputbar = document.getElementById("inputbar").value; /* 입력 받은 내용*/
 
@@ -28,37 +29,46 @@ function printResult(inputbar){
 
 /* 입력받은 값 배열에 저장 -> 양식에 맞게 출력 */
 function printArray(resultString){
+
     var inputbar = document.getElementById("inputbar").value; /* 입력 받은 내용*/
     var result = document.getElementById("result"); /* 검색결과 출력창*/
     var element = document.getElementById("time"); /* div time (현재시간) */
 
-    result.innerHTML = ""; // 출력창 초기화
+    // 출력창 초기화
+    result.innerHTML = ""; 
+    eTime.innerHTML = "";
 
-    var eTime = document.getElementById("eTime");
-    eTime = element.innerHTML + " | " ; // 저장할 문자열 중 시간
-    
-    //t = element.innerHTML + " | " ; // 저장할 문자열 중 시간
+    t = element.innerHTML + " | "; // 저장할 문자열 중 현재 시간
     s = inputbar + resultString; // 저장할 문자열 중 유효성검사 결과
-    // // t랑 s랑 css 따로 넣을 수 있는지 
 
-
-
-    arr.unshift(eTime+s); // 문자열을 배열에 저장(가장 최근 데이터가 위로 오게)
+    arrElement.unshift(t);
+    arr.unshift(s); // 문자열을 배열에 저장(가장 최근 데이터가 위로 오게)
 
     if(arr.length > 5){ // 배열의 길이가 5를 넘지 않게
         arr.pop(); // 가장 오래된 데이터 삭제
+        arrElement.pop();
     }
     for(var i=0; i<arr.length; i++){ // 문자열 저장한 배열 + 삭제버튼 + 개행
-        result.innerHTML += arr[i] +"<button class=del onclick=\"deleteArray("+i+")\"><i class=\"fa-solid fa-trash-can\"></i></button><br>";
+        eTime.innerHTML += arrElement[i] + "<br>";
+        result.innerHTML += arr[i] + "<button class=del onclick=\"deleteArray("+i+")\"><i class=\"fa-solid fa-delete-left\"></i></button><br>";
     }
+
 }
 
 /* 삭제버튼 function */
 function deleteArray(idx){
-    arr.splice(idx,1); // 배열의 idx번째 내용 삭제
-    result.innerHTML = ""; // 출력창 초기화
+
+    // 배열의 idx번째 내용 삭제
+    arr.splice(idx,1); 
+    arrElement.splice(idx,1);
+
+     // 출력창 초기화
+    result.innerHTML = ""; 
+    eTime.innerHTML = "";
+
     for(var i=0; i<arr.length; i++){ // 재출력
-        result.innerHTML += arr[i] +"<button class=del onclick=\"deleteArray("+i+")\"><i class=\"fa-solid fa-trash-can\"></i></button><br>";
+        eTime.innerHTML += arrElement[i] + "<br>";
+        result.innerHTML += arr[i] + "<button class=del onclick=\"deleteArray("+i+")\"><i class=\"fa-solid fa-delete-left\"></i></button><br>";
     }
 }
 

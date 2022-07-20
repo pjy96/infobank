@@ -80,10 +80,20 @@ input:hover{ /* 검색바에 마우스포인터가 올라왔을때, 클릭했을
     color: black;
     font-size: 14px;
     font-weight: 500;
-    width: 410px;
-    display: inline-block; /* 출력창과 같은 줄에 배치 */
+    width: 250px;
     margin: 10px;
-    padding: 5px;
+    padding: 5px; 
+    display: inline-block; 
+    left: 145px;
+}
+.eTime{ /* 결과 출력 창 중 시간 */
+    display: inline-block; 
+    position: absolute;
+    color: cornflowerblue;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 10px;
+    padding: 5px; 
 }
 .del{ /* 출력창에 생성되는 삭제버튼 */
     float: right; /* 오른쪽 정렬 */
@@ -95,7 +105,4 @@ input:hover{ /* 검색바에 마우스포인터가 올라왔을때, 클릭했을
 .del:hover,
 .del:focus{ /* 삭제버튼 마우스 가까이 갔을 때, 클릭했을 때 */
     color: rgb(60, 60, 60);
-}
-.eTime{
-    color: red;
 }
